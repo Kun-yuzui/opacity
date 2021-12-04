@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				width: 50px;
+				height: 50px;
+				background: orange;
+				opacity: .3;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+
+		<script type="text/javascript">
+			let $ = document.querySelectorAll.bind(document);
+			let timerA;
+
+			function changeOpa(target, speed) {
+			alert(typeof parseFloat(getComputedStyle($('div')[0]).opacity);
+			alert(typeof target);
+				clearInterval(timerA);
+				timerA = setInterval(function() {
+					if (parseFloat(getComputedStyle($('div')[0]).opacity)==target){
+						clearInterval(timerA);
+					}else{
+						$('div')[0].style.opacity=parseFloat(getComputedStyle($('div')[0]).opacity)+speed;
+					}
+				}, 30)
+			}
+
+			$('div')[0].onmouseover = function() {
+				changeOpa(0.9,0.06);
+			}
+			$('div')[0].onmouseout = function() {
+				changeOpa(0.3,-0.01);
+			}
+		</script>
+	</body>
+</html>
